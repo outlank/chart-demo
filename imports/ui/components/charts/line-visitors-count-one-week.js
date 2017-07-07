@@ -4,9 +4,6 @@ import {Visitors} from '/imports/api/visitors/visitors';
 import {Tracker} from 'meteor/tracker';
 import echarts from 'echarts';
 
-Template.lineVisitorsCountOneWeek.onCreated(function () {
-  Meteor.subscribe('visitors')
-});
 
 Template.lineVisitorsCountOneWeek.onRendered(function () {
   var temp = this;

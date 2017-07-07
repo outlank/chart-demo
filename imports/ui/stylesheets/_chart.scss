@@ -1,3 +1,14 @@
 .chart-block {
   padding: 0;
+  .panel {
+    margin: 0;
+  }
+  @media (min-width: 768px) {
+    #list-visitors {
+      position: absolute;
+      z-index: 10;
+      white-space: nowrap;
+    }
+  }
+
 }

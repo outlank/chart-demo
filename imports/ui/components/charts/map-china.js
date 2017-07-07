@@ -6,10 +6,6 @@ import "./map-china.html";
 import echarts from 'echarts';
 import 'echarts/map/js/china';
 
-Template.mapChina.onCreated(function () {
-  Meteor.subscribe('visitors')
-});
-
 Template.mapChina.onRendered(function () {
   this.$('.panel-body>div').height(this.$('.panel-body>div').width()*.8);
   var chart = echarts.init(this.$('.panel-body>div')[0]);

@@ -1,0 +1,37 @@
+<template name="listVisitors">
+  <div class="panel panel-default" id="list-visitors">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{title}}</h3>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>IP</th>
+          <th>Web browser</th>
+          <th>Operating System</th>
+          <th>Device</th>
+          <th>Province</th>
+          <th>City</th>
+        </tr>
+        </thead>
+        {{#if visitors }}
+          <tbody>
+          {{#each visitor in visitors}}
+            <tr>
+              <td>{{visitor.clientAddress}}</td>
+              <td>{{visitor.useragent.agent}}</td>
+              <td>{{visitor.useragent.os}}</td>
+              <td>{{visitor.useragent.device}}</td>
+              <td>{{visitor.location.address_detail.province}}</td>
+              <td>{{visitor.location.address_detail.city}}</td>
+            </tr>
+          {{/each}}
+          </tbody>
+        {{else}}
+          <h1>Loading..</h1>
+        {{/if}}
+      </table>
+    </div>
+  </div>
+</template>

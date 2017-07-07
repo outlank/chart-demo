@@ -4,9 +4,6 @@ import {Visitors} from '/imports/api/visitors/visitors';
 import {Tracker} from 'meteor/tracker';
 import echarts from 'echarts';
 
-Template.lineVisitorsOneDay.onCreated(function () {
-  Meteor.subscribe('visitors')
-});
 
 Template.lineVisitorsOneDay.onRendered(function () {
   let chart = echarts.init(this.$('.panel-body>div')[0]);
