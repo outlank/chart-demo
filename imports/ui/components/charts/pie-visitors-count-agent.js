@@ -32,7 +32,7 @@ Template.pieVisitorsCountAgent.onRendered(function () {
     visualMap: {
       show: false,
       inRange: {
-        colorLightness: [0, 0.7]
+        colorLightness: [0.3, 0.7]
       }
     },
     series: [
