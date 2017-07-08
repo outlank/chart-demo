@@ -22,7 +22,7 @@ Template.lineVisitorsCountOneWeek.onRendered(function () {
       formatter: function (params) {
         params = params[0];
         let date = new Date(params.name);
-        return date.getYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日 : ' + params.value[1];
+        return (date.getYear()-100) + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日 : ' + params.value[1];
       },
       axisPointer: {
         animation: false

@@ -47,22 +47,22 @@ Template.pieVisitorsCountOs.onRendered(function () {
         roseType: false,
         label: {
           normal: {
-            position: 'inside',
+            position: 'outside',
             textStyle: {
               color: 'rgba(255, 255, 255, 0.3)'
             }
           }
         },
-        // labelLine: {
-        //   normal: {
-        //     lineStyle: {
-        //       color: 'rgba(255, 255, 255, 0.3)'
-        //     },
-        //     smooth: 0.2,
-        //     length: 10,
-        //     length2: 20
-        //   }
-        // },
+        labelLine: {
+          normal: {
+            lineStyle: {
+              color: 'rgba(255, 255, 255, 0.3)'
+            },
+            smooth: 0.2,
+            length: 3,
+            length2: 3
+          }
+        },
         itemStyle: {
           normal: {
             color: '#c23531',
@@ -92,7 +92,7 @@ Template.pieVisitorsCountOs.onRendered(function () {
           res.map(function (e) {
             let name = e._id.split(' ');
             name.pop();
-            name = name.join('');
+            name = name.join(' ');
             if (!d[name]) {
               d[name] = 0;
             }
