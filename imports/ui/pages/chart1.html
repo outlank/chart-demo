@@ -2,6 +2,7 @@
   <div class="container-fluid">
     <div class="row">
       <div class="chart-block col-sm-3">
+        {{> countVisitors}}
         {{> lineVisitorsOneDay}}
         {{> lineVisitorsCountOneWeek}}
         {{> listVisitors}}
@@ -10,7 +11,6 @@
         {{> mapChina}}
       </div>
       <div class="chart-block col-sm-2">
-        {{> countVisitors}}
         {{> pieVisitorsCountAgent}}
         {{> pieVisitorsCountOs}}
       </div>

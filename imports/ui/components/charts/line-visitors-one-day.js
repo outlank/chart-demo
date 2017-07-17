@@ -8,7 +8,7 @@ import echarts from 'echarts';
 Template.lineVisitorsOneDay.onRendered(function () {
   this.$('.panel-body>div').height(this.$('.panel-body>div').width() * .5);
   let chart = echarts.init(this.$('.panel-body>div')[0]);
-  //chart.showLoading();
+  chart.showLoading({    maskColor: 'rgba(255, 255, 255, 0.1)',  });
 
   let data = [];
   let startTime = moment();

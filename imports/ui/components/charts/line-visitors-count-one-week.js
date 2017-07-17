@@ -9,7 +9,7 @@ Template.lineVisitorsCountOneWeek.onRendered(function () {
   this.$('.panel-body>div').height(this.$('.panel-body>div').width() * .5);
   var temp = this;
   var chart = echarts.init(temp.$('.panel-body>div')[0]);
-  //chart.showLoading();
+  chart.showLoading({maskColor: 'rgba(255, 255, 255, 0.1)',});
 
   let data = [];
   let startTime = moment();

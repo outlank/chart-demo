@@ -9,7 +9,7 @@ Template.pieVisitorsCountAgent.onRendered(function () {
   this.$('.panel-body>div').height(this.$('.panel-body>div').width());
   var temp = this;
   var chart = echarts.init(temp.$('.panel-body>div')[0]);
-  //chart.showLoading();
+  chart.showLoading({    maskColor: 'rgba(255, 255, 255, 0.1)',  });
 
   let data = [];
   chart.setOption({
@@ -26,10 +26,9 @@ Template.pieVisitorsCountAgent.onRendered(function () {
 
     tooltip: {
       trigger: 'item',
-      formatter: "{a} <br/>{b} : {c} ({d}%)",
+      formatter: "{a} <br/>{b} : <br/>{c} ({d}%)",
       confine: true,
     },
-
     visualMap: {
       show: false,
       inRange: {
@@ -72,8 +71,8 @@ Template.pieVisitorsCountAgent.onRendered(function () {
           }
         },
         // selectedMode: 'single',
-        animationType: 'scale',
-        animationEasing: 'elasticOut',
+        // animationType: 'scale',
+        // animationEasing: 'elasticOut',
         animationDelay: function (idx) {
           return Math.random() * 200;
         }

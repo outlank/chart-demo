@@ -16,6 +16,6 @@ Template.listVisitors.helpers({
     }
   },
   date(time) {
-    return moment(time).format('MM-DD HH:MM:SS')
+    return moment(time).format('HH:MM:SS MM-DD')
   }
 });

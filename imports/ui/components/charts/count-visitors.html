@@ -1,10 +1,12 @@
 <template name="countVisitors">
   <div class="panel panel-default" id="count-visitors">
     <div class="panel-heading">
-      <h3 class="panel-title">用户访问量</h3>
+      <h3 class="panel-title text-center">用户访问量</h3>
     </div>
-    <div class="panel-body">
-      {{visitors_count}}<small>人次</small>
+    <div class="panel-body text-center">
+      <span style="display: none" id="count"></span>
+      <small style="display: none" id="count-text">人次</small>
+      <span id="count-loading">Loading...</span>
     </div>
   </div>
 </template>
