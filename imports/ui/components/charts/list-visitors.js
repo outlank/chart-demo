@@ -12,7 +12,10 @@ Template.listVisitors.helpers({
     if (!Meteor.subscribe('visitors').ready()) {
       return false;
     } else {
-      return Visitors.find({}, {sort: {'createAt': -1}, limit: 8}).fetch();
+      return Visitors.find({}, {sort: {'createAt': -1}, limit: 5}).fetch();
     }
+  },
+  date(time) {
+    return moment(time).format('MM-DD HH:MM:SS')
   }
 });

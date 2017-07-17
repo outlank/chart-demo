@@ -6,27 +6,38 @@ import echarts from 'echarts';
 
 
 Template.lineVisitorsCountOneWeek.onRendered(function () {
+  this.$('.panel-body>div').height(this.$('.panel-body>div').width() * .5);
   var temp = this;
   var chart = echarts.init(temp.$('.panel-body>div')[0]);
-  chart.showLoading();
+  //chart.showLoading();
 
   let data = [];
   let startTime = moment();
 
   chart.setOption({
-    title: {
-      text: '访问总量'
+    // title: {
+    //   text: '访问总量'
+    // },
+    grid: {
+      left: 45,
+      right: 20,
+      top: 10,
+      bottom: 35,
+    },
+    textStyle: {
+      color: 'rgba(255, 255, 255, .4)'
     },
     tooltip: {
       trigger: 'axis',
       formatter: function (params) {
         params = params[0];
         let date = new Date(params.name);
-        return (date.getYear()-100) + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日 : ' + params.value[1];
+        return date.getFullYear() + '年' + (date.getMonth() + 1) + '月' + date.getDate() + '日 : ' + params.value[1];
       },
       axisPointer: {
         animation: false
-      }
+      },
+      confine: true,
     },
     xAxis: {
       type: 'time',
@@ -47,7 +58,18 @@ Template.lineVisitorsCountOneWeek.onRendered(function () {
       showSymbol: false,
       hoverAnimation: false,
       data: data,
-      smooth: true
+      smooth: true,
+      areaStyle: {
+        normal: {
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+            offset: 0,
+            color: '#C23531'
+          }, {
+            offset: 1,
+            color: 'rgb(0, 0, 0)'
+          }])
+        }
+      },
     }]
   });
 
@@ -73,7 +95,7 @@ Template.lineVisitorsCountOneWeek.onRendered(function () {
           let date = moment(now).subtract(i, 'days').format();
           date = dayData(date);
           data.unshift(date);
-          if(!date.value[1]) break;
+          if (!date.value[1]) break;
         }
       } else {
         if (sub) {

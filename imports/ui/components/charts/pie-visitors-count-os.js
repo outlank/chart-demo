@@ -9,37 +9,38 @@ Template.pieVisitorsCountOs.onRendered(function () {
   this.$('.panel-body>div').height(this.$('.panel-body>div').width());
   var temp = this;
   var chart = echarts.init(temp.$('.panel-body>div')[0]);
-  chart.showLoading();
+  //chart.showLoading();
 
   let data = [];
   chart.setOption({
-    backgroundColor: '#2c343c',
+    backgroundColor: 'transparent',
 
-    title: {
-      text: 'Customized Pie',
-      left: 'center',
-      top: 20,
-      textStyle: {
-        color: '#ccc'
-      }
-    },
+    // title: {
+    //   text: 'Customized Pie',
+    //   left: 'center',
+    //   top: 20,
+    //   textStyle: {
+    //     color: '#ccc'
+    //   }
+    // },
 
     tooltip: {
       trigger: 'item',
-      formatter: "{a} <br/>{b} : {c} ({d}%)"
+      formatter: "{a} <br/>{b} : {c} ({d}%)",
+      confine: true,
     },
 
     visualMap: {
       show: false,
       inRange: {
-        colorLightness: [0.3, 0.7]
+        colorLightness: [0.3, 0.6]
       }
     },
     series: [
       {
-        name: '浏览器',
+        name: '操作系统',
         type: 'pie',
-        radius: '55%',
+        radius: ['50%', '85%'],
         center: ['50%', '50%'],
         data: data.sort(function (a, b) {
           return a.value - b.value;
@@ -47,7 +48,7 @@ Template.pieVisitorsCountOs.onRendered(function () {
         roseType: false,
         label: {
           normal: {
-            position: 'outside',
+            position: 'center',
             textStyle: {
               color: 'rgba(255, 255, 255, 0.3)'
             }
@@ -70,7 +71,7 @@ Template.pieVisitorsCountOs.onRendered(function () {
             shadowColor: 'rgba(0, 0, 0, 0.5)'
           }
         },
-
+        // selectedMode: 'single',
         animationType: 'scale',
         animationEasing: 'elasticOut',
         animationDelay: function (idx) {

@@ -1,18 +1,18 @@
 <template name="chart1">
   <div class="container-fluid">
     <div class="row">
-      <div class="chart-block col-sm-2">
-        {{> countVisitors}}
-        {{> pieVisitorsCountAgent}}
-        {{> pieVisitorsCountOs}}
+      <div class="chart-block col-sm-3">
+        {{> lineVisitorsOneDay}}
+        {{> lineVisitorsCountOneWeek}}
         {{> listVisitors}}
       </div>
       <div class="chart-block col-sm-7">
         {{> mapChina}}
       </div>
-      <div class="chart-block col-sm-3">
-        {{> lineVisitorsOneDay}}
-        {{> lineVisitorsCountOneWeek}}
+      <div class="chart-block col-sm-2">
+        {{> countVisitors}}
+        {{> pieVisitorsCountAgent}}
+        {{> pieVisitorsCountOs}}
       </div>
     </div>
   </div>

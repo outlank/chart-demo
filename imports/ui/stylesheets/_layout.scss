@@ -1,8 +1,52 @@
+$bgc: #15161C;
+$color: #8193A3;
+
 body {
-  font-family: "Microsoft YaHei UI",sans-serif;
-  background-color: #ddd;
+  font-family: "Microsoft YaHei UI", sans-serif;
+  background-color: $bgc;
+  color: $color;
 }
 
 #top-navbar {
   margin-bottom: 0;
+  background-color: $bgc;
+  color: $color;
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 200%;
+  }
+  border-bottom: 2px solid;
+}
+
+.chart-block {
+  background-color: $bgc;
+  padding: 0;
+  .panel {
+    border: none;
+    background-color: transparent;
+    margin: 0;
+    .panel-heading {
+      padding: 10px;
+      color: $color;
+      background-color: transparent;
+      border-bottom: none;
+      .panel-title {
+        font-size: 130%;
+        font-weight: bold;
+      }
+    }
+    .panel-body {
+      padding-top: 0;
+    }
+
+  }
+  @media (min-width: 768px) {
+    #list-visitors {
+      position: absolute;
+      z-index: 10;
+      //white-space: nowrap;
+      max-width: 187.5%;
+    }
+  }
+
 }

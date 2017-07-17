@@ -6,15 +6,25 @@ import echarts from 'echarts';
 
 
 Template.lineVisitorsOneDay.onRendered(function () {
+  this.$('.panel-body>div').height(this.$('.panel-body>div').width() * .5);
   let chart = echarts.init(this.$('.panel-body>div')[0]);
-  chart.showLoading();
+  //chart.showLoading();
 
   let data = [];
   let startTime = moment();
 
   chart.setOption({
-    title: {
-      text: '24小时访问量'
+    // title: {
+    //   text: '24小时访问量'
+    // },
+    textStyle: {
+      color: 'rgba(255, 255, 255, .4)'
+    },
+    grid: {
+      left: 45,
+      right: 20,
+      top: 10,
+      bottom: 35,
     },
     tooltip: {
       trigger: 'axis',
@@ -25,7 +35,8 @@ Template.lineVisitorsOneDay.onRendered(function () {
       },
       axisPointer: {
         animation: false
-      }
+      },
+      confine: true,
     },
     xAxis: {
       type: 'time',
@@ -46,7 +57,18 @@ Template.lineVisitorsOneDay.onRendered(function () {
       showSymbol: false,
       hoverAnimation: false,
       data: data,
-      smooth: true
+      smooth: true,
+      areaStyle: {
+        normal: {
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+            offset: 0,
+            color: '#C23531'
+          }, {
+            offset: 1,
+            color: 'rgb(0, 0, 0)'
+          }])
+        }
+      },
     }]
   });
 

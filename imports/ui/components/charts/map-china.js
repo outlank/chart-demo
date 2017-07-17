@@ -7,31 +7,32 @@ import echarts from 'echarts';
 import 'echarts/map/js/china';
 
 Template.mapChina.onRendered(function () {
-  this.$('.panel-body>div').height(this.$('.panel-body>div').width()*.8);
+  this.$('.panel-body>div').height(this.$('.panel-body>div').width()*.7);
   var chart = echarts.init(this.$('.panel-body>div')[0]);
-  chart.showLoading();
+  //chart.showLoading();
 
   var max = 0;
   var province = ['北京', '天津', '上海', '重庆', '河北', '河南', '云南', '辽宁', '黑龙江', '湖南', '安徽', '山东', '新疆', '江苏', '浙江', '江西', '湖北', '广西', '甘肃', '山西', '内蒙古', '陕西', '吉林', '福建', '贵州', '广东', '青海', '西藏', '四川', '宁夏', '海南', '台湾', '香港', '澳门'];
   var data = [];
 
   chart.setOption({
-    backgroundColor: '#404a59',
-    title: {
-      text: '全国访问量',
-      left: 'center',
-      textStyle: {
-        color: '#fff',
-      }
-    },
+    backgroundColor: 'transparent',
+    // title: {
+    //   text: '全国访问量',
+    //   left: 'center',
+    //   textStyle: {
+    //     color: '#fff',
+    //   }
+    // },
     tooltip: {
-      trigger: 'item'
+      trigger: 'item',
+      confine: true,
     },
     visualMap: {
       min: 0,
       max: max,
-      left: 'left',
-      top: 'bottom',
+      left: '5%',
+      top: 'middle',
       text: ['高', '低'],           // 文本，默认为数值文本
       calculable: true,
       textStyle: {
@@ -64,9 +65,9 @@ Template.mapChina.onRendered(function () {
           }
         },
         itemStyle: {
-          normal: {
-            color: '#ddb926'
-          }
+          // normal: {
+          //   color: '#ddb926'
+          // },
         }
       },
     ]
