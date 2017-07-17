@@ -1,11 +1,11 @@
-import "./pie-visitors-count-agent.html";
+import "./pie-visitors-count-device.html";
 import {Meteor} from 'meteor/meteor';
 import {Tracker} from 'meteor/tracker';
 import {Visitors} from '/imports/api/visitors/visitors';
 import echarts from 'echarts';
 
 
-Template.pieVisitorsCountAgent.onRendered(function () {
+Template.pieVisitorsCountDevice.onRendered(function () {
   this.$('.panel-body>div').height(this.$('.panel-body>div').width());
   var temp = this;
   var chart = echarts.init(temp.$('.panel-body>div')[0]);
@@ -29,6 +29,7 @@ Template.pieVisitorsCountAgent.onRendered(function () {
       formatter: "{a} <br/>{b} : <br/>{c} ({d}%)",
       confine: true,
     },
+
     visualMap: {
       show: false,
       inRange: {
@@ -37,7 +38,7 @@ Template.pieVisitorsCountAgent.onRendered(function () {
     },
     series: [
       {
-        name: '浏览器',
+        name: '设备',
         type: 'pie',
         radius: ['50%', '85%'],
         center: ['50%', '50%'],
@@ -84,7 +85,7 @@ Template.pieVisitorsCountAgent.onRendered(function () {
     if (Meteor.subscribe('visitors').ready()) {
       chart.hideLoading();
 
-      Meteor.call('visitors.aggregate', "agent", (err, res) => {
+      Meteor.call('visitors.aggregate', "device", (err, res) => {
         if (err) {
           alert(err);
         } else {

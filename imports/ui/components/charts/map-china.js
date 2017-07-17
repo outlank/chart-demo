@@ -42,6 +42,7 @@ Template.mapChina.onRendered(function () {
         name: '全国访问量',
         type: 'map',
         mapType: 'china',
+        zoom: 1.1,
         data: data,
         label: {
           normal: {
@@ -84,8 +85,8 @@ Template.mapChina.onRendered(function () {
         visualMap: {
           min: 0,
           max: max,
-          left: '5%',
-          top: 'middle',
+          left: 'left',
+          bottom: '12%',
           text: ['高', '低'],           // 文本，默认为数值文本
           calculable: true,
           inRange: {

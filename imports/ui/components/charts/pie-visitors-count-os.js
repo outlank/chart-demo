@@ -33,7 +33,7 @@ Template.pieVisitorsCountOs.onRendered(function () {
     visualMap: {
       show: false,
       inRange: {
-        colorLightness: [0.3, 0.6]
+        colorLightness: [0.2, 0.7]
       }
     },
     series: [
