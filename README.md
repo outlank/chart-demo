@@ -12,3 +12,4 @@
 
 ### 效果
 大概这样：
+![](https://raw.githubusercontent.com/outlank/chart-demo/master/public/img/chart-demo.png)
