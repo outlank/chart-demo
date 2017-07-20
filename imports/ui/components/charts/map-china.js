@@ -44,6 +44,7 @@ Template.mapChina.onRendered(function () {
         mapType: 'china',
         zoom: 1.1,
         data: data,
+        center: [100, 36],
         label: {
           normal: {
             formatter: '{b}',

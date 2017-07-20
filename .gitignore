@@ -1,4 +1,5 @@
 node_modules/
 /.eslintrc.json
 /imports/env.js
-/.mup/
+/.deploy/
+/.idea/
