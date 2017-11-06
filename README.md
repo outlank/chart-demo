@@ -12,5 +12,4 @@
 
 ### 效果
 大概这个样子：
-[线上demo](http://47.93.158.148:3001)
 ![](https://raw.githubusercontent.com/outlank/chart-demo/master/public/img/chart-demo.png)
